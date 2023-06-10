@@ -14,5 +14,5 @@ THEN I am presented with search options by: title, genre, ratings
 WHEN I view movie selection 
 then I am presented with a age input
 when I answer the age requirement 
-THEN I am presented with the options to select a cocktail suggestion that will pair well with the moive 
+THEN I am presented with the options to select a cocktail suggestion that will pair well with the movie 
 

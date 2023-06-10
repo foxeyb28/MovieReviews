@@ -20,8 +20,8 @@ var movieDetails;  // variable that holds all info from pullMovie Data function
 
 var imdbTest = 'tt3794354';
 // Function that fetches General Movie Data to add to Movie Card HTML
-// Function takes information from Index.HMTL Search Result that is clicked
 
+// Function takes information from Index.HMTL Search Result that is clicked
 // imdbTitleID taken from Local Storage Maybe???
 
 function pullMovieData(imdbTitleID){
