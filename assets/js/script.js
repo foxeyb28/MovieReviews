@@ -1,21 +1,17 @@
+var apiKey = '10f524b1';
+function getOmdbApi(movie) {
+  // replace `octocat` with anyone else's GitHub username
+  var requestUrl = 'http://www.omdbapi.com/?apikey=' + apikey + '&s=' + movie + '&type=movie';
 
-  function fetchMovieData() {
-    var movieInfo = document.getElementById('movie-info').value; 
-    var apiKey = '10f524b1'; 
-  }
-
-    $.ajax({
-        url: 'http://www.omdbapi.com/',
-        type: 'GET',
-        dataType: 'json',
-        data: {
-          apikey: '10f524b1',
-          t: movieTitle
-        }}),
-    then(function(response) {
-      var movieData = response.data;
-      document.getElementById('movie-info').innerHTML = '<h2>' + movieData.Title + '</h2><p>' + movieData.Plot + '</p>';
+  fetch(requestUrl)
+    .then(function (response) {
+      console.log(response)
+      return response.json();
     })
-    .catch(function(error) {
-      console.log(error);
+    .then(function (data) {
+      console.log(data)
+
     });
+}
+  //utelly will tell me which streaming app to watch the movie on
+
