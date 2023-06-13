@@ -1,60 +1,55 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MovieReviews</title>
-    <!-- Link Materialize CSS -->
-    
-    <!-- Compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    
-    <!--  Jquery  -->
-    <!--  RapidAPI in in JS code for functional movie database   -->
-    
-    
-    
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/jass.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <title>MovieReviews</title>
 </head>
 
 <body>
     <div class="flex-row align-center justify-center min-100-vh bg-primary">
-        <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
-            <h1 class="text-primary">
-                MovieReviews - Find the perfect drink to go along with your movie!
-                Have you ever wondered what would be the perfect drink pairing for the
-                movie you are watching would be? Have no fear! We here at MovieReview
-                have made it simple. All you have to do is select a movie and we will
-                find the perfect paired drink for you to enjoy while watching your
-                movie!
-            </h1>
-            <form id="search-form" class="form w-100">
-                <input id="search-input" class="form-input w-100" type="text" placeholder="Search!" />
-                <select id="format-input" class="form-input w-100">
-                    <option value="" disabled selected>Select a Movie Genre...</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="horror">Horror</option>
-                    <option value="romance">Romance</option>
-                    <option value="action">Action</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="crime">Crime</option>
-                    <option value="science fiction">Science Fiction</option>
-                    <option value="animation">Animation</option>
-                </select>
-                <button id="search-button" class="btn btn-info btn-block">Click Me</button>
-                
-            </form>
-        </div>
-
-        <script src="./assets/js/script.js"></script>
+      <div class="col-12 col-md-9 flex-column align-center bg-light p-5">
+        <h1 class="text-primary">
+          MovieReviews - Find the perfect drink to go along with your movie!
+          Have you ever wondered what would be the perfect drink pairing for the
+          movie you are watching would be? Have no fear! We here at MovieReview
+          have made it simple. All you have to do is select a movie and we will
+          find the perfect paired drink for you to enjoy while watching your
+          movie!
+        </h1>
+        <form id="search-form" class="form w-100">
+          <input
+            id="search-input"
+            class="form-input w-100"
+            type="text"
+            placeholder="Search!"
+          />
+          <select id="format-input" class="form-input w-100">
+            <option value="" disabled selected>Select a Movie Genre...</option>
+            <option value="comedy">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="action">Action</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="crime">Crime</option>
+            <option value="science fiction">Science Fiction</option>
+            <option value="animation">Animation</option>
+          </select>
+          <button class="btn btn-info btn-block" id="search-button">Click Me</button>
+        </form>
+      </div>
+    </div>
+    
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
