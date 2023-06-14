@@ -63,6 +63,10 @@ function renderCard(movieDetails) {
 }
 
 
+$(document).ready(function(){
+  $('select').formSelect();
+});
+
 // document.querySelector()
 var button = document.querySelector("#search-button");
 button.addEventListener("click", function (event) {
