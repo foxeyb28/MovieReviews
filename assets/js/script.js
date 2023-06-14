@@ -2,6 +2,7 @@ var searchResult = document.querySelector("#movieResult");
 
 var apiKey = '10f524b1';
 var genreInput;
+var userInput;
 var movieAPIkey = {
   method: 'GET',
   headers: {
@@ -74,4 +75,7 @@ button.addEventListener("click", function (event) {
   console.log(genreInput);
   // get the value from that input and print it to the console.
   pullSearchResult(genreInput);
+
+  userInput = document.querySelector("#search-input").value;
+  console.log(userInput);
 });
