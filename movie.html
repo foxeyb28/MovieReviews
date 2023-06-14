@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,41 +8,91 @@
     <!-- Link Stylesheets -->
     <link rel="Stylesheets" href="./assets/css/style.css">
     <!-- Link Materialize CSS -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Link OMDB & CocktailDB API -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="https://www.omdbapi.com/api.js?key=10f524b1"></script> -->
     <!-- <script src="https://www.thecocktaildb.com/api/json/v1/1"></script> -->
-  
+
 
     <div>
-        <h5 class="center-align"> MovieReviews 📣🎬🎥🎞</h5>
+        <h1 class="center-align"> MovieReviews 📣🎬🎥🎞</h1>
     </div>
-    
+
 </head>
+
 <body>
-    <div class="card-panel #90caf9 blue lighten-3"></div>
-    
-    <div class="row">
+
+    <div class="card-panel blue lighten-3"></div>
+
+    <main class="row">
         <section class="col s4 offset-s1 movie bordered column" style="border: 5px solid #000;" id="movie-info">
-            <img src="" alt="">
-            <h2 class="card title center-align">Movie Title</h2>
-            <p class="card-content">Movie Details</p>
+            <article class="card">
+
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img src="" alt="">
+                </div>
+
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 center-align">Movie Title<i
+                            class="material-icons right"></i></span>
+                    <p><a href="#"></a></p>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Movie Details<i
+                            class="material-icons right">close</i></span>
+                    <p>Here is some more information about this Movie.</p>
+                </div>
+
+            </article>
         </section>
 
         <section class="col s4 offset-s2 drink bordered column" style="border: 5px solid #000;" id="drink-info">
-            <img src="" alt="">
-            <h2 class="card title center-align">Drink Name</h2>
-            <p class="card-content">Drink Recipe</p>
-        </section>
+            <article class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img src="" alt="">
+                </div>
 
-    </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 center-align">Drink Name<i
+                            class="material-icons right"></i></span>
+                    <p><a href="#"></a></p>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Drink Recipe<i
+                            class="material-icons right">close</i></span>
+                    <p>Here is the recipe and details of this Drink</p>
+                </div>
+
+            </article>
+        </section>
+    </main>
+
+
+    <!-- <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="images/office.jpg">
+        </div>
+       
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+       
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div> -->
 
     <!-- For Materialize -->
-    <script type="text/javascript" src="js/materialize.min.js"></script> 
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- 
+
 </body>
+
 </html>
