@@ -1,3 +1,5 @@
+var searchResult = document.querySelector("#movieResult");
+
 var apiKey = '10f524b1';
 var genreInput;
 var movieAPIkey = {
@@ -41,7 +43,21 @@ function pullSearchResult(genre) {
 
 // push movie details into a card
 function renderCard(movieDetails) {
-  console.log("title: " + movieDetails.Title +"\nRating: "+ movieDetails.imdbRating+"\nImg link: "+ movieDetails.Poster+"\nimbdID: "+ movieDetails.imdbID);
+  console.log("title: " + movieDetails.Title +
+  "\nRating: "+ movieDetails.imdbRating+
+  "\nImg link: "+ movieDetails.Poster+
+  "\nimbdID: "+ movieDetails.imdbID);
+  var card = document.createElement("div");
+  var title = document.createElement("h1");
+  title.textContent = movieDetails.Title;
+  card.appendChild(title);
+  searchResult.append(card);
+  card.addEventListener("click", function(event){
+    var queryString = './movie.html?movieID=' + movieDetails.imdbID + '&genre=' + genreInput;
+  
+    location.assign(queryString);  
+
+  } )
 
 }
 

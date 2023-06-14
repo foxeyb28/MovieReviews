@@ -52,4 +52,16 @@ function pushMovieDetails(movieDetails){
     movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text); 
 }
 
- pullMovieData(imdbTest);
+function getParams() {
+    // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
+    var searchParamsArr = document.location.search.split('&');
+  
+    // Get the query and format values
+    var imdbID = searchParamsArr[0].split('=').pop();
+    var userGenre = searchParamsArr[1].split('=').pop();
+    console.log(searchParamsArr,imdbID,userGenre);
+    pullMovieData(imdbID);
+    // Call cocktailAPI function
+  }
+getParams();
+// pullMovieData(imdbTest);
