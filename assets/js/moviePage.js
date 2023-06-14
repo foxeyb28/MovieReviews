@@ -1,5 +1,8 @@
 // Javascript Page for Movie/Drink Details page
 
+// Movie card Elements
+var movieCard = document.getElementById("movie-info");
+
 // API key for Online Movie Database from RapidAPI
 var movieAPIkey = {
     method: 'GET',
@@ -30,12 +33,23 @@ function pullMovieData(imdbTitleID){
     
     fetch(movieDetailsURL, movieAPIkey)
         .then(function(response){
-            console.log(response);
+            // console.log(response);
             return response.json();
         })
         .then (function (data){
             movieDetails = data;
+            pushMovieDetails(movieDetails);
         })
  }
+
+function pushMovieDetails(movieDetails){
+    // child 0 is image element
+    movieCard.children[0].setAttribute("src", (movieDetails.title.image.url));
+    movieCard.children[0].setAttribute("alt", "a movie poster for the film "+ (movieDetails.title.title));
+    // child 1 is movie title
+    movieCard.children[1] = movieCard.children[1].append(movieDetails.title.title);
+    // child 2 is further details
+    movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text); 
+}
 
  pullMovieData(imdbTest);
