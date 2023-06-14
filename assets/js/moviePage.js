@@ -27,41 +27,86 @@ var imdbTest = 'tt3794354';
 // Function takes information from Index.HMTL Search Result that is clicked
 // imdbTitleID taken from Local Storage Maybe???
 
-function pullMovieData(imdbTitleID){
+function pullMovieData(imdbTitleID) {
     // general details fetch based off IMBD title
-    var movieDetailsURL= 'https://online-movie-database.p.rapidapi.com/title/get-overview-details?tconst=' + imdbTitleID;
-    
+    var movieDetailsURL = 'https://online-movie-database.p.rapidapi.com/title/get-overview-details?tconst=' + imdbTitleID;
+
     fetch(movieDetailsURL, movieAPIkey)
-        .then(function(response){
+        .then(function (response) {
             // console.log(response);
             return response.json();
         })
-        .then (function (data){
+        .then(function (data) {
             movieDetails = data;
             pushMovieDetails(movieDetails);
-        })
- }
 
-function pushMovieDetails(movieDetails){
+        })
+}
+
+function pushMovieDetails(movieDetails) {
     // child 0 is image element
     movieCard.children[0].setAttribute("src", (movieDetails.title.image.url));
-    movieCard.children[0].setAttribute("alt", "a movie poster for the film "+ (movieDetails.title.title));
+    movieCard.children[0].setAttribute("alt", "a movie poster for the film " + (movieDetails.title.title));
     // child 1 is movie title
     movieCard.children[1] = movieCard.children[1].append(movieDetails.title.title);
     // child 2 is further details
-    movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text); 
+    movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text);
 }
 
 function getParams() {
     // Get the search params out of the URL (i.e. `?q=london&format=photo`) and convert it to an array (i.e. ['?q=london', 'format=photo'])
     var searchParamsArr = document.location.search.split('&');
-  
+
     // Get the query and format values
     var imdbID = searchParamsArr[0].split('=').pop();
     var userGenre = searchParamsArr[1].split('=').pop();
-    console.log(searchParamsArr,imdbID,userGenre);
+    console.log(searchParamsArr, imdbID, userGenre);
     pullMovieData(imdbID);
+    getCocktail(userGenre);
     // Call cocktailAPI function
-  }
+}
+
+function getCocktail(Genre) {
+    var selectedGenre = Genre;
+    console.log(selectedGenre);
+
+    var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
+    var liquor;
+    if (selectedGenre === "comedy") {
+        liquor = "whiskey";
+    } else if (selectedGenre === "horror") {
+        liquor = "vodka";
+    } else if (selectedGenre === "romance") {
+        liquor = "wine";
+    } else if (selectedGenre === "action") {
+        liquor = "tequila";
+    } else if (selectedGenre === "fantasy") {
+        liquor = "rum";
+    } else if (selectedGenre === "crime") {
+        liquor = "bourbon";
+    } else if (selectedGenre === "science fiction") {
+        liquor = "absinthe";
+    } else if (selectedGenre === "animation") {
+        liquor = "brandy";
+    }
+
+    apiUrl += liquor;
+    console.log(apiUrl);
+    fetch(apiUrl)
+        .then(function (resp) {
+            return resp.json();
+        })
+        .then(function (data) {
+            // console.log(Math.floor(Math.random() * data.drinks.length))
+            // console.log("example", data)
+
+            var randomCocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+            console.log(randomCocktail);
+        })
+}
+
+
+
+
 getParams();
 // pullMovieData(imdbTest);
