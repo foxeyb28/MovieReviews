@@ -50,7 +50,7 @@ function pushMovieDetails(movieDetails) {
     // child 1 is movie title
     movieCard.children[0].children[1].children[0] = movieCard.children[0].children[1].children[0].append(movieDetails.title.title);
     // child 2 is further details
-    movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text);
+    movieCard.children[0].children[2].children[1] = movieCard.children[0].children[2].children[1].append(movieDetails.plotOutline.text);
 }
 
 function getParams() {
@@ -62,8 +62,8 @@ function getParams() {
     // var userGenre = searchParamsArr[1].split('=').pop();
     var userGenre='horror';
     console.log(searchParamsArr, imdbID, userGenre);
-    // pullMovieData(imdbID);
-    pullMovieData(imdbTest);
+    pullMovieData(imdbID);
+    // pullMovieData(imdbTest);
     getCocktail(userGenre);
     // Call cocktailAPI function
 }
