@@ -1,5 +1,4 @@
 // Javascript Page for Movie/Drink Details page
-
 // Movie card Elements
 var movieCard = document.getElementById("movie-info");
 

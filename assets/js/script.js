@@ -1,4 +1,8 @@
 var searchResult = document.querySelector("#movieResult");
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, {});
+});
 
 var apiKey = '10f524b1';
 var genreInput;
