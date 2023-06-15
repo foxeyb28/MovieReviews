@@ -37,6 +37,7 @@ function pullMovieData(imdbTitleID) {
         })
         .then(function (data) {
             movieDetails = data;
+            console.log(movieDetails);
             pushMovieDetails(movieDetails);
 
         })
@@ -44,10 +45,10 @@ function pullMovieData(imdbTitleID) {
 
 function pushMovieDetails(movieDetails) {
     // child 0 is image element
-    movieCard.children[0].setAttribute("src", (movieDetails.title.image.url));
-    movieCard.children[0].setAttribute("alt", "a movie poster for the film " + (movieDetails.title.title));
+    movieCard.children[0].children[0].children[0].setAttribute("src", (movieDetails.title.image.url));
+    movieCard.children[0].children[0].children[0].setAttribute("alt", "a movie poster for the film " + (movieDetails.title.title));
     // child 1 is movie title
-    movieCard.children[1] = movieCard.children[1].append(movieDetails.title.title);
+    movieCard.children[0].children[1].children[0] = movieCard.children[0].children[1].children[0].append(movieDetails.title.title);
     // child 2 is further details
     movieCard.children[2] = movieCard.children[2].append(movieDetails.plotOutline.text);
 }
@@ -58,9 +59,11 @@ function getParams() {
 
     // Get the query and format values
     var imdbID = searchParamsArr[0].split('=').pop();
-    var userGenre = searchParamsArr[1].split('=').pop();
+    // var userGenre = searchParamsArr[1].split('=').pop();
+    var userGenre='horror';
     console.log(searchParamsArr, imdbID, userGenre);
-    pullMovieData(imdbID);
+    // pullMovieData(imdbID);
+    pullMovieData(imdbTest);
     getCocktail(userGenre);
     // Call cocktailAPI function
 }
@@ -108,4 +111,3 @@ function getCocktail(Genre) {
 
 
 getParams();
-// pullMovieData(imdbTest);
