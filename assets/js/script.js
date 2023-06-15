@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var apiKey = '10f524b1';
 var genreInput;
+var userInput;
 var movieAPIkey = {
   method: 'GET',
   headers: {
@@ -66,6 +67,10 @@ function renderCard(movieDetails) {
 }
 
 
+$(document).ready(function(){
+  $('select').formSelect();
+});
+
 // document.querySelector()
 var button = document.querySelector("#search-button");
 button.addEventListener("click", function (event) {
@@ -78,4 +83,7 @@ button.addEventListener("click", function (event) {
   console.log(genreInput);
   // get the value from that input and print it to the console.
   pullSearchResult(genreInput);
+
+  userInput = document.querySelector("#search-input").value;
+  console.log(userInput);
 });
