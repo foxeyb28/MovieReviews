@@ -95,6 +95,8 @@ function getCocktail(Genre) {
         liquor = "absinthe";
     } else if (selectedGenre === "animation") {
         liquor = "brandy";
+    } else {
+        liquor = "gin";
     }
 
     apiUrl += liquor;
