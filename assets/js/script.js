@@ -1,5 +1,5 @@
 var searchResult = document.querySelector("#movieResult");
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(elems, {});
 });
@@ -11,7 +11,7 @@ var userInput;
 var movieAPIkey = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '1cdac887f3msh05eda135c041876p1e7b93jsn43c9489628a4',
+    'X-RapidAPI-Key': 'e342068b10mshd6c5bdbdfe36144p1b5760jsn4b8dd74d1dde',
     'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
   }
 };
@@ -32,7 +32,7 @@ function getOmdbApi(movieID) {
 }
 // Function that uses RapidAPI 
 function pullSearchResult(user) {
-  var requestUrl = 'https://online-movie-database.p.rapidapi.com/title/v2/find?title='+user+ '&titleType=movie&limit=20&sortArg=user_rating%2Casc&genre='+genreInput;
+  var requestUrl = 'https://online-movie-database.p.rapidapi.com/title/v2/find?title=' + user + '&titleType=movie&limit=20&sortArg=user_rating%2Casc&genre=' + genreInput;
   // console.log(requestUrl);
   fetch(requestUrl, movieAPIkey)
     .then(function (response) {
@@ -40,7 +40,7 @@ function pullSearchResult(user) {
     })
     .then(function (data) {
       testData = data.results;
-      for (var i = 0; i<testData.length; i++){
+      for (var i = 0; i < testData.length; i++) {
         // console.log(testData[i].title, testData[i].image.url);
         getOmdbApi(testData[i].id.split('/')[2]);
       }
@@ -50,29 +50,29 @@ function pullSearchResult(user) {
 // push movie details into a card
 function renderCard(movieDetails) {
   console.log("title: " + movieDetails.Title +
-  "\nRating: "+ movieDetails.imdbRating+
-  "\nImg link: "+ movieDetails.Poster+
-  "\nimbdID: "+ movieDetails.imdbID);
+    "\nRating: " + movieDetails.imdbRating +
+    "\nImg link: " + movieDetails.Poster +
+    "\nimbdID: " + movieDetails.imdbID);
   // Create Div and give it columns to add movie images to
   var card = document.createElement("div");
-  card.setAttribute("class","col s2 frame");
-  card.setAttribute("width","100px");
+  card.setAttribute("class", "col s2 frame");
+  card.setAttribute("width", "100px");
   var title = document.createElement("img");
-  title.setAttribute("src",movieDetails.Poster);
+  title.setAttribute("src", movieDetails.Poster);
   card.appendChild(title);
 
   searchResult.append(card);
-  card.addEventListener("click", function(event){
+  card.addEventListener("click", function (event) {
     var queryString = './movie.html?movieID=' + movieDetails.imdbID + '&genre=' + genreInput;
-  
-    location.assign(queryString);  
 
-  } )
+    location.assign(queryString);
+
+  })
 
 }
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('select').formSelect();
 });
 
@@ -87,7 +87,7 @@ button.addEventListener("click", function (event) {
   genreInput = document.querySelector("#format-input").value;
   console.log(genreInput);
   // get the value from that input and print it to the console.
-  
+
   userInput = document.querySelector("#search-input").value;
   console.log(userInput);
   pullSearchResult(userInput);
