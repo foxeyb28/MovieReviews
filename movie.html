@@ -5,25 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link Stylesheets -->
-    <link rel="Stylesheets" href="./assets/css/style.css">
+    
     <!-- Link Materialize CSS -->
-    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> --
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <!-- Link Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Link OMDB & CocktailDB API -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script src="https://www.omdbapi.com/api.js?key=10f524b1"></script> -->
-    <!-- <script src="https://www.thecocktaildb.com/api/json/v1/1"></script> -->
 
-
-    <div>
-        <h1 class="center-align"> MovieReviews 📣🎬🎥🎞</h1>
-    </div>
+    <title>Movie Reviews</title>
 
 </head>
 
 <body>
+
+    <div>
+        <h1 class="center-align"> MovieReviews 📣🎬🎥🎞</h1>
+    </div>
 
     <div class="card-panel blue lighten-3"></div>
 
@@ -37,15 +35,18 @@
                 </div>
 
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4 center-align">Movie Title<i
+                    <!-- Movie title goes here -->
+                    <span class="card-title activator grey-text text-darken-4 center-align"><i
                             class="material-icons right"></i></span>
                     <p><a href="#"></a></p>
                 </div>
 
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Movie Details<i
-                            class="material-icons right">close</i></span>
-                    <p>Here is some more information about this Movie.</p>
+                    <span class="card-title grey-text text-darken-4">Movie Details
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <!-- Movie details below -->
+                    <p></p>
                 </div>
 
             </article>
@@ -54,11 +55,13 @@
         <section class="col s4 offset-s2 drink bordered column" style="border: 5px solid #000;" id="drink-info">
             <article class="card">
                 <div class="card-image waves-effect waves-block waves-light">
+                    <!-- image src and alt text append here -->
                     <img src="" alt="">
                 </div>
 
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4 center-align">Drink Name<i
+                    <!-- drink name appends to this span -->
+                    <span class="card-title activator grey-text text-darken-4 center-align"><i
                             class="material-icons right"></i></span>
                     <p><a href="#"></a></p>
                 </div>
@@ -66,7 +69,8 @@
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">Drink Recipe<i
                             class="material-icons right">close</i></span>
-                    <p>Here is the recipe and details of this Drink</p>
+                    <!-- Recipe details append here -->
+                    <p> </p>
                 </div>
 
             </article>
@@ -74,10 +78,10 @@
     </main>
 
     <!-- For Materialize -->
-    <!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+    <script type="text/javascript" src="js/materialize.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/moviePage.js"></script>
- 
+
 </body>
 
 </html>
