@@ -54,3 +54,9 @@ h2{
   max-width: 90%;
   margin: 0 auto;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 4; /* Firefox */
+  font-size: large;
+}
