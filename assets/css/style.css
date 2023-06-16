@@ -1,10 +1,11 @@
-/* .col {
-    background-color: #f2f2f2;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    width: 300px;
-  } */
+
+
+  .card{
+    min-height: 665px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   #movie-info{
     margin: 5px;
@@ -19,4 +20,25 @@
     font-size: 16px;
     line-height: 1.5;
   }
-  
+
+  .row .col.offset-s1 {
+    margin-left: 8.3333333333% !important;
+}
+
+h2{
+  font-size: 22px !important;
+  margin: 0 !important;
+}
+
+.welcome{
+ background-color: #26a69a;
+ color: white;
+ max-width: 90%;
+ margin: 12px auto ;
+ padding: 20px;
+}
+
+#search-form{
+  max-width: 90%;
+  margin: 0 auto;
+}
