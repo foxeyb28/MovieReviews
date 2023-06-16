@@ -55,7 +55,8 @@ function renderCard(movieDetails) {
   "\nimbdID: "+ movieDetails.imdbID);
   // Create Div and give it columns to add movie images to
   var card = document.createElement("div");
-  card.setAttribute("class","card medium col s1");
+  card.setAttribute("class","col s2 frame");
+  card.setAttribute("width","100px");
   var title = document.createElement("img");
   title.setAttribute("src",movieDetails.Poster);
   card.appendChild(title);
