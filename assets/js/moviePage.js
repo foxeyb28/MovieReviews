@@ -7,7 +7,7 @@ var cocktailCard = document.getElementById("drink-info");
 var movieAPIkey = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '1cdac887f3msh05eda135c041876p1e7b93jsn43c9489628a4',
+        'X-RapidAPI-Key': 'e342068b10mshd6c5bdbdfe36144p1b5760jsn4b8dd74d1dde',
         'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
     }
 }
@@ -113,7 +113,7 @@ function getCocktail(Genre) {
             var cocktailID = randomCocktail.idDrink;
             console.log(cocktailID);
             cocktailDetails(cocktailID);
-            
+
 
 
         })
