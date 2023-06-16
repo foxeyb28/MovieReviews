@@ -62,10 +62,13 @@ function renderCard(movieDetails) {
   var title = document.createElement("img");
   title.setAttribute("src",movieDetails.Poster);
   card.appendChild(title);
+  document.querySelector(".row").classList.remove('hidden');
 
   searchResult.append(card);
   card.addEventListener("click", function(event){
     var queryString = './movie.html?movieID=' + movieDetails.imdbID + '&genre=' + genreInput;
+    document.querySelector(".row").classList.add('hidden');
+
   
     location.assign(queryString);  
 

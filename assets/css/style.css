@@ -67,3 +67,7 @@ h2{
   flex-direction: column;
   justify-content: space-between;
 }
+
+.hidden{
+  display: none;
+}
