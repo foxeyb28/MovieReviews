@@ -11,15 +11,13 @@ var userInput;
 var movieAPIkey = {
   method: 'GET',
   headers: {
-    // 'X-RapidAPI-Key': '1cdac887f3msh05eda135c041876p1e7b93jsn43c9489628a4',
-    // 'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
     'X-RapidAPI-Key': 'e342068b10mshd6c5bdbdfe36144p1b5760jsn4b8dd74d1dde',
     'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
   }
 };
 // pull Movie Details
 function getOmdbApi(movieID) {
-  var requestUrl = 'http://www.omdbapi.com/?apikey=' + apiKey + '&i=' + movieID;
+  var requestUrl = 'https://www.omdbapi.com/?apikey=' + apiKey + '&i=' + movieID;
 
   fetch(requestUrl)
     .then(function (response) {
