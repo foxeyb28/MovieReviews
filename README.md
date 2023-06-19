@@ -2,7 +2,7 @@
 [Proposal Template](https://docs.google.com/document/d/1MZ9fm_BDmQp6SfBz9CN1ajKZib_TTZbzY3ZfVyFPgbg/edit#)
 
 AS A Movie-Spectator
-I WANT to access a Movie by ratings, genre and title with the suggestion of a cocktail.
+I WANT to access a Movie by title and genre with an added bonus of a cocktail suggestion including ingredients plus instuctions on making the cocktail.
 SO THAT I can enjoy a great movie and cocktail.
 
 As a movie enthusiast, I want to utilize a Movie APl to access comprehensive information about movies, including details about their release date, genre, cast, crew, plot summaries, and ratings.

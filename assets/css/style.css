@@ -1,10 +1,11 @@
-/* .col {
-    background-color: #f2f2f2;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    width: 300px;
-  } */
+
+
+  .card{
+    min-height: 665px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   #movie-info{
     margin: 5px;
@@ -20,6 +21,7 @@
     line-height: 1.5;
   }
 
+
   body {
     background-image: url("./Movie3.jpeg"); /* Set a background image make sure to edit the path to your image*/
     background-size: cover; /* Adjust the image size to cover the entire background */
@@ -29,4 +31,31 @@
   
   header {
     background-color: #f1f1f1; /* Set a background color */
+  }
+
+  .row .col.offset-s1 {
+    margin-left: 8.3333333333% !important;
+}
+
+h2{
+  font-size: 22px !important;
+  margin: 0 !important;
+}
+
+.welcome{
+ background-color: #26a69a;
+ color: white;
+ max-width: 90%;
+ margin: 12px auto ;
+ padding: 20px;
+}
+
+#search-form{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
   }
