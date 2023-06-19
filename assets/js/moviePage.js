@@ -7,7 +7,7 @@ var cocktailCard = document.getElementById("drink-info");
 var movieAPIkey = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '1cdac887f3msh05eda135c041876p1e7b93jsn43c9489628a4',
+        'X-RapidAPI-Key': 'e342068b10mshd6c5bdbdfe36144p1b5760jsn4b8dd74d1dde',
         'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
     }
 }
@@ -119,14 +119,49 @@ function getCocktail(Genre) {
         })
 }
 
-function pushCocktail(randomCocktail) {
+function pushCocktail(randomCocktail, dd) {
     cocktailCard.children[0].children[0].children[0].setAttribute("src", (randomCocktail.strDrinkThumb));
     cocktailCard.children[0].children[0].children[0].setAttribute("alt", "an image of a cocktail called " + (randomCocktail.strDrink));
     cocktailCard.children[0].children[1].children[0].append(randomCocktail.strDrink);
-    cocktailCard.children[0].children[2].children[1].append(drinkDetails.strInstructions);
+
+    console.log(dd)
+    var ingredientsArr = [];
+    var measuresArr = [];
+    for (var property in dd) {
+        if (property.indexOf("strIngredient") != -1) {
+            if (dd[property]) {
+                var idx = parseInt(property.split("strIngredient")[1]);
+                ingredientsArr[idx] = dd[property];
+            }
+        } else if (property.indexOf("strMeasure") != -1) {
+            if (dd[property]) {
+                var idx = parseInt(property.split("strMeasure")[1]);
+                measuresArr[idx] = dd[property];
+            }
+        }
+    }
+    console.log(ingredientsArr);
+    console.log(measuresArr);
+
+    var ingredientsList = document.querySelector("#ingredients");
+    for (var index = 1; index < ingredientsArr.length; index++) {
+        // Make a <li> tag
+        var newItem = document.createElement("li");
+        // set its innerText to "ingredient" + "measure"
+        newItem.textContent = measuresArr[index] + " " + ingredientsArr[index];
+        // append it as a child to the ingredientList
+        ingredientsList.appendChild(newItem);
+    }
+    cocktailCard.children[0].children[2].children[1].append(drinkDetails.strInstructions)
+
+  
+    }
+
+
+
+function recipe () {
 
 }
-
 function cocktailDetails(ID) {
     var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + ID;
     console.log("apiurl: " + apiUrl);
@@ -137,7 +172,7 @@ function cocktailDetails(ID) {
         .then(function (data) {
             drinkDetails = data.drinks[0];
             console.log("details: " + drinkDetails.strInstructions);
-            pushCocktail(randomCocktail);
+            pushCocktail(randomCocktail, drinkDetails);
         })
 }
 
