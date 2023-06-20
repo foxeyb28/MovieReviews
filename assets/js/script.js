@@ -17,7 +17,7 @@ var movieAPIkey = {
 };
 // pull Movie Details
 function getOmdbApi(movieID) {
-  var requestUrl = 'http://www.omdbapi.com/?apikey=' + apiKey + '&i=' + movieID;
+  var requestUrl = 'https://www.omdbapi.com/?apikey=' + apiKey + '&i=' + movieID;
 
   fetch(requestUrl)
     .then(function (response) {
