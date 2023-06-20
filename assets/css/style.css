@@ -56,7 +56,6 @@ h2{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: black;
-  opacity: 4; /* Firefox */
-  font-size: large;
-}
+    color: red;
+    opacity: 1; /* Firefox */
+  }
