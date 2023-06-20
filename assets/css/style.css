@@ -24,7 +24,7 @@
 
   body {
     background-image: url("./Movie3.jpeg"); /* Set a background image make sure to edit the path to your image*/
-    background-size: cover; /* Adjust the image size to cover the entire background */
+    background-size:cover;900px/* Adjust the image size to cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
   }
@@ -56,7 +56,8 @@ h2{
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: black;
+  color: red;
   opacity: 4; /* Firefox */
   font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
